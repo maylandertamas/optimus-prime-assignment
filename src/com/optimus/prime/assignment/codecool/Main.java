@@ -12,39 +12,16 @@ import java.util.stream.IntStream;
 public class Main {
 
     static void findPrimes(int maxNum) {
-        Map<Integer, Boolean> myMap = new HashMap<>();
-        List<Integer> numberList = IntStream.range(2, maxNum+1).boxed().collect(Collectors.toList());
-        for (Integer num: numberList) {
-            myMap.put(num, true);
-        }
-
-        for (Integer key: myMap.keySet()) {
-            if (key % 2 == 0) {
-                myMap.replace(key, false);
-            } else if (key % 3 == 0) {
-                myMap.replace(key, false);
-            } else if (key % 5 == 0) {
-                myMap.replace(key, false);
-            } else if (key % 7 == 0) {
-                myMap.replace(key, false);
-            }
-            myMap.replace(2, true);
-            myMap.replace(3, true);
-            myMap.replace(5, true);
-            myMap.replace(7, true);
-        }
-
-        for (Map.Entry<Integer, Boolean> prime: myMap.entrySet()) {
-            if (prime.getValue()) {
-                System.out.println(prime.getKey());
-            }
-        }
+        List<Integer> numberList = IntStream.range(2, maxNum+1)
+                .filter(l -> (l % 2 != 0 && l % 3 != 0 && l % 5 != 0 && l % 7 != 0))
+                .boxed().collect(Collectors.toList());
+        System.out.println(numberList);
      }
 
 
 
     public static void main(String[] args) {
-        findPrimes(12412412);
+        findPrimes(30);
 
     }
 }
