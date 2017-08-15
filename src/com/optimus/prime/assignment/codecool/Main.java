@@ -1,8 +1,5 @@
 package com.optimus.prime.assignment.codecool;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,18 +30,20 @@ public class Main {
             myMap.replace(5, true);
             myMap.replace(7, true);
         }
-
+        int counter = 0;
         for (Map.Entry<Integer, Boolean> prime: myMap.entrySet()) {
             if (prime.getValue()) {
-                System.out.println(prime.getKey());
+                // System.out.println(prime.getKey());
+                counter++;
             }
         }
+        System.out.println(counter);
      }
 
 
 
     public static void main(String[] args) {
-        findPrimes(12412412);
+        findPrimes(120);
 
     }
 }
