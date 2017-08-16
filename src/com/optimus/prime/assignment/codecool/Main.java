@@ -1,49 +1,37 @@
 package com.optimus.prime.assignment.codecool;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class Main {
 
-    static Integer findPrimes(int maxNum) {
-        Map<Integer, Boolean> myMap = new HashMap<>();
-        List<Integer> numberList = IntStream.range(2, maxNum+1).boxed().collect(Collectors.toList());
-        for (Integer num: numberList) {
-            myMap.put(num, true);
+    static int findPrimes(int maxNum) {
+        List<Boolean> primeArrayList = new ArrayList();
+        for (int i = 0; i < maxNum; i++) {
+            primeArrayList.add(true);
         }
+        primeArrayList.set(0, false);
+        primeArrayList.set(1, false);
 
-        for (Integer key: myMap.keySet()) {
-            if (key % 2 == 0) {
-                myMap.replace(key, false);
-            } else if (key % 3 == 0) {
-                myMap.replace(key, false);
-            } else if (key % 5 == 0) {
-                myMap.replace(key, false);
-            } else if (key % 7 == 0) {
-                myMap.replace(key, false);
-            }
-            myMap.replace(2, true);
-            myMap.replace(3, true);
-            myMap.replace(5, true);
-            myMap.replace(7, true);
-        }
-        int counter = 0;
-        for (Map.Entry<Integer, Boolean> prime: myMap.entrySet()) {
-            if (prime.getValue()) {
-                // System.out.println(prime.getKey());
-                counter++;
+        int primeCounter = 0;
+        for (int i = 2; i < primeArrayList.size(); i++) {
+
+            if (primeArrayList.get(i)) {
+                for (int z = 2; z*i < primeArrayList.size(); z++) {
+                    primeArrayList.set(z*i, false);
+                }
             }
         }
-        System.out.println(counter);
-        return counter;
+        for (boolean element: primeArrayList) {
+            if (element) {
+                primeCounter++;
+            }
+        }
+        return primeCounter;
+        
     }
 
-
     public static void main(String[] args) {
-        findPrimes(120);
-
+        System.out.println(findPrimes(121));
     }
 }

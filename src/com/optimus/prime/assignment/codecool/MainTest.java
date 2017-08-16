@@ -8,19 +8,25 @@ public class MainTest {
     @Test
     public void testPrimeFinder1()
     {
-        Integer expected = new Integer(10);
+        int expected =10;
         assertEquals("with the range of 30 the expected result should be 10", expected, Main.findPrimes(30));
     }
 
     @Test
     public void testPrimeFinder2() {
-        Integer expected = new Integer(30);
+        int expected = 30;
         assertEquals("with the range of 120 the expected result should be 30", expected, Main.findPrimes(120));
     }
 
     @Test
     public void testPrimeFinder3() {
-        Integer expected = new Integer(29);
+        int expected = 29;
         assertEquals("with the range of 110 the expected result should be 29", expected, Main.findPrimes(110));
+    }
+
+    @Test
+    public void testPrimeFinder4() {
+        int expected = 30;
+        assertEquals("with the range of 121 the expected result should be 30", expected, Main.findPrimes(121));
     }
 }
