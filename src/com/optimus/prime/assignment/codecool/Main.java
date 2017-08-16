@@ -8,7 +8,7 @@ import java.util.stream.IntStream;
 
 public class Main {
 
-    static void findPrimes(int maxNum) {
+    static Integer findPrimes(int maxNum) {
         Map<Integer, Boolean> myMap = new HashMap<>();
         List<Integer> numberList = IntStream.range(2, maxNum+1).boxed().collect(Collectors.toList());
         for (Integer num: numberList) {
@@ -38,8 +38,8 @@ public class Main {
             }
         }
         System.out.println(counter);
-     }
-
+        return counter;
+    }
 
 
     public static void main(String[] args) {
