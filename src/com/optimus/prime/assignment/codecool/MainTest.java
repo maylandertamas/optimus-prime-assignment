@@ -20,7 +20,7 @@ public class MainTest {
 
     @Test
     public void testPrimeFinder3() {
-        long expected = new Integer(29);
+        long expected = 29;
         assertEquals("with the range of 110 the expected result should be 29", expected, Main.findPrimes(110));
     }
 }
