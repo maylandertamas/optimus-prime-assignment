@@ -29,4 +29,10 @@ public class MainTest {
         int expected = 30;
         assertEquals("with the range of 121 the expected result should be 30", expected, Main.findPrimes(121));
     }
+
+    @Test
+    public void testPrimeFinder5() {
+        int expected = 31;
+        assertEquals("with the range of 130 the expected result should be 31", expected, Main.findPrimes(130));
+    }
 }
