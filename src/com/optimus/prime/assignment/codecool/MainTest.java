@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class MainTest {
-    /*
+
     @Test
     public void testPrimeFinder1()
     {
@@ -23,5 +23,5 @@ public class MainTest {
     public void testPrimeFinder3() {
         int expected = 29;
         assertEquals("with the range of 110 the expected result should be 29", expected, Main.findPrimes(110));
-    }*/
+    }
 }
