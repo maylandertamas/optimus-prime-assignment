@@ -22,6 +22,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        System.out.println(findPrimes(155125125));
+        System.out.println(findPrimes(120));
     }
 }
